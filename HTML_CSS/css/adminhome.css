@@ -1,69 +1,7 @@
-*{
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    background-color: whitesmoke;
-    font-family: Poppins-Regular, sans-serif
-}
-
-#header-wrapper {
-    width: 1000px;
-    height: 250px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-header {
-    background-color: #121212;
-    height: 200px;
-}
-
-header h1 {
-    color: whitesmoke;
-    line-height: 200px;
-    font-size: 40px;
-}
-
-header ul {
-    margin-top: 90px;
-    display: flex;
-    color: whitesmoke;
-}
-
-header ul li {
-    margin-left: 15px;
-    list-style: none;
-}
-
-header ul li a{
-    color: whitesmoke;
-}
-
-#new-post-wrapper {
-    width: 1000px;
-    margin: 0 auto;
-}
-
-#new-post{
-    background-color: lightgreen;
-    border-radius: 5px;
-    padding: 15px 50px 15px 50px;
-    color: black;
-    border: solid 1px black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    top: -75px;
-}
-
-
 #moderate-comments {
     background-color: lightcoral;
     border-radius: 5px;
-    padding: 15px 50px 15px 50px;
+    padding: 10px 50px 10px 50px;
     color: black;
     border: solid 1px black;
     text-align: center;
@@ -74,72 +12,6 @@ header ul li a{
     left: 10px;
 }
 
-#posts-wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 40px;
-    row-gap: 40px;
+#moderate-comments:hover {
+    filter: brightness(90%);
 }
-
-.blog-post {
-    position: relative;
-    height: 300px;
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.blog-post h3 {
-    padding: 10px 0px 10px 10px;
-    position: relative;
-    z-index: 1;
-    color: whitesmoke;
-}
-
-.blog-post img {
-    height: 175px;
-    width: 300px;
-    position: absolute;
-    top: 0px;
-    z-index: 0;
-    filter: brightness(50%);
-}
-
-.blog-post p {
-    position: absolute;
-    top: 185px;
-    padding: 10px;
-    text-align: left;
-}
-
-.buttons {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.edit-post {
-    background-color: lightsalmon;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    padding: 3px;
-}
-
-.delete-post {
-    background-color: lightcoral;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    padding: 3px;
-}
-

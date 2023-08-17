@@ -73,74 +73,49 @@ header ul li a:hover {
     margin-top: 10px;  
 }
 
-#posts-wrapper {
+/* Moderate comments */
+
+#comments {
     width: 1000px;
     margin: 0 auto;
     margin-top: 50px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 40px;
-    row-gap: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
-.blog-post {
-    position: relative;
-    height: 300px;
-    width: 300px;
+.comment {
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
     border-radius: 5px;
-}
-
-.blog-post h3 {
-    padding: 10px 0px 10px 10px;
-    position: relative;
-    z-index: 1;
-    color: whitesmoke;
-}
-
-.blog-post img {
-    height: 175px;
-    width: 300px;
-    position: absolute;
-    top: 0px;
-    z-index: 0;
-    filter: brightness(50%);
-}
-
-.blog-post p {
-    position: absolute;
-    top: 185px;
-    padding: 10px;
-    text-align: left;
-}
-
-.buttons {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin-right: 10px;
     margin-bottom: 10px;
 }
 
-.buttons a {    
+.delete {
+    background-color: lightcoral;
     border-radius: 5px;
+    padding: 2px 4px 2px 4px;
     color: black;
+    border: solid 1px black;
     text-align: center;
-    font-weight: bold;
     text-decoration: none;
     display: inline-block;
-    padding: 3px;
+    position: relative;
+    margin-right: 4px;
 }
 
-.buttons a:hover {
-    filter: brightness(90%);
+.comment-content{
+    border-left: 1px dotted black;
+    border-right: 1px dotted black;
+    width: 800px;
+    padding-left: 10px;
+    line-height: 25px;
 }
 
-.edit-post {
-    background-color: lightsalmon;
+.post-id {
+    text-align: center;
+    line-height: 25px;
+    width: 100px;
 }
-
-.delete-post {
-    background-color: lightcoral;
-}
-

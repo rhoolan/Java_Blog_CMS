@@ -10,24 +10,32 @@ body {
 
 #header-wrapper {
     width: 1000px;
-    height: 100px;
+    height: 250px;
     margin: 0 auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
 }
+header {
+    background-color: #121212;
+    height: 200px;
+}
 
-#header-wrapper h1 {
-    font-size: 50px;
-    line-height: 100px;
+header h1 {
+    color: whitesmoke;
+    line-height: 200px;
+    font-size: 40px;
 }
 
 #header-wrapper a {
-    color: black;
+    color: whitesmoke;
     display: flex;
     justify-content: flex-end;
-    line-height: 100px;
+    line-height: 200px;
+    list-style: none;
+}
+
+#header-wrapper a:hover {
+    filter:brightness(80%);
 }
 
 #carosel {

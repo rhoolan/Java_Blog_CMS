@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="loginregister.css">
+    <link rel="stylesheet" href="/css/loginregister.css">
     <title>ログイン・登録</title>
 </head>
 <body>
@@ -14,11 +14,13 @@
                     <h2>Login</h2>
                     <input type="text" placeholder="username" required>
                     <input type="text" placeholder="password" required>
-                    <input type="submit">
+                    <input type="submit" class="submit-btn" value="Login">
                 </form>
-
-                <a href="#" class="slider-button" id="register_slide_up" onclick="registerSlideUp()"> Register </a>
-             </section>
+                <div class="slider-wrapper">
+                    <p>Not a member?</p>
+                    <a href="#" class="slider-button" id="register_slide_up" onclick="registerSlideUp()"> Register </a>
+                </div>
+            </section>
 
              <section id="register">
                 <form>
@@ -27,12 +29,14 @@
                     <input type="text" placeholder="email" required>
                     <input type="password" placeholder="password" required>
                     <input type="password" placeholder="confirm password" required>
-                    <input type="submit">
+                    <input type="submit" class="submit-btn" value="Register">
                 </form>
-                <a href="#" class="slider-button" id="login_slide_up" onclick="loginSlideUp()"> Login </a>
+                <div class="slider-wrapper">
+                    <a href="#" class="slider-button" id="login_slide_up" onclick="loginSlideUp()"> Login </a>
+                </div>    
             </section>
         </section>
     </main>
-    <script src="loginregister.js"></script>
+    <script src="/js/loginregister.js"></script>
 </body>
 </html>

@@ -1,0 +1,107 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: Poppins-Regular, sans-serif
+}
+
+#header-wrapper {
+    width: 1000px;
+    height: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+header {
+    background-color: #121212;
+    height: 200px;
+}
+
+header h1 {
+    color: whitesmoke;
+    line-height: 200px;
+    font-size: 40px;
+}
+
+header ul {
+    margin-top: 90px;
+    display: flex;
+    color: whitesmoke;
+}
+
+header ul li {
+    margin-left: 15px;
+    list-style: none;
+}
+
+header ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    filter:brightness(80%);
+}
+
+#new-post-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* new post */
+h2{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+}
+#write-post {
+    background-color: white;
+    border: solid 1px grey;
+    width: 800px;
+    margin: 0 auto; 
+    margin-top: 50px;
+    padding: 25px;
+}
+
+#write-post label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#write-post input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#post-content {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    text-align:unset;
+}
+
+textarea{
+    resize: none;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#submit {
+    background-color: lightgreen;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#submit:hover {
+    filter: brightness(90%);
+}

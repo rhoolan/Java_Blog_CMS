@@ -20,9 +20,10 @@ body {
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+    position: relative;
 }
 
-#wrapper h1 {
+#wrapper h2 {
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
@@ -37,7 +38,6 @@ body {
     margin-bottom: 15px;
     border: 0px;
     border-bottom: 1px solid #333;
-    color: #555;
     line-height: 1.2;
     height: 45px;
     font-size: 15px;
@@ -48,8 +48,28 @@ body {
     display: none;
 }
 
-.slider-button {
+.slider-wrapper {
     color: white;
     background-color: blue;
     display: inline-block;
+    position: absolute;
+    bottom: 0px;
+}
+
+.submit-btn {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 164px;
+    height: 40px;
+    align-self: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: white;
+}
+
+.submit-btn:hover {
+    transition: all .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
 }

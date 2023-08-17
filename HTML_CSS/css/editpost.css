@@ -1,0 +1,26 @@
+
+#save {
+    background-color: lightgreen;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#save:hover {
+    filter: brightness(90%);
+}
+
+#delete {
+    background-color: red;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#delete:hover {
+    filter: brightness(90%);
+}
