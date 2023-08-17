@@ -17,7 +17,7 @@ public class UserRegisterController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/loginregister")
+	@GetMapping("/register")
 	public String getLoginRegisterPage() {
 		return "loginregister.html";
 	}

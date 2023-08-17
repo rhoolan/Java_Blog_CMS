@@ -16,7 +16,7 @@ public class UserService {
 		UserEntity userEntity = userDao.findByEmail(email);
 		
 		if (userEntity == null) {
-			userDao.save(new UserEntity(userName, email, password));
+//			userDao.save(new UserEntity(userName, email, password));
 			return true;
 		} else {
 			return false;
