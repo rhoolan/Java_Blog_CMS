@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import blog.ex.service.UserService;
 
-@RequestMapping("/user")
+//@RequestMapping("/user")
 
 @Controller
 public class UserRegisterController {
@@ -23,8 +23,8 @@ public class UserRegisterController {
 	}
 	
 	@PostMapping("/register/registerprocess")
-	public String register(@RequestParam String user_name, @RequestParam String user_email, @RequestParam String user_password) {
-		userService.createAccount(user_name, user_email, user_password);
-		return "redirect:/loginregister";
+	public String register(@RequestParam String register_user_name, @RequestParam String register_user_email, @RequestParam String register_user_password) {
+		userService.createAccount(register_user_name, register_user_email, register_user_password);
+		return "redirect:/register";
 	}
 }

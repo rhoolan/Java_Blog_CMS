@@ -1,5 +1,10 @@
 package blog.ex.service;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +21,24 @@ public class UserService {
 		UserEntity userEntity = userDao.findByEmail(email);
 		
 		if (userEntity == null) {
-//			userDao.save(new UserEntity(userName, email, password));
+			UUID uuid = UUID.randomUUID();
+			String saltStr = uuid.toString();
+			String salt = saltStr.substring(0,10);
+			String hashedPassword = hashPassword(password+salt);
+			userDao.save(new UserEntity(userName, email, hashedPassword, salt));
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	private String hashPassword(String password) {
+		try {
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(password.getBytes());
+			return Base64.getEncoder().encodeToString(hash);
+		} catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException("Hashing Algorithm not found", e);
 		}
 	}
 }
