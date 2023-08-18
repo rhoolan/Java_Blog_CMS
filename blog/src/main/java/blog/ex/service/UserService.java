@@ -41,8 +41,6 @@ public class UserService {
 			return null;
 		} else if (userEntity.getPassword().equals(hashPassword)) {
 			return userEntity;
-		} else {
-			return null;
 		}
 	}
 	

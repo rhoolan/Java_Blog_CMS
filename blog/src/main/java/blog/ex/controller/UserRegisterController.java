@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import blog.ex.model.entity.UserEntity;
 import blog.ex.service.UserService;
+import jakarta.servlet.http.HttpSession;
 
 //@RequestMapping("/user")
 
@@ -16,6 +18,8 @@ public class UserRegisterController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private HttpSession session;
 	
 	@GetMapping("/register")
 	public String getLoginRegisterPage() {
@@ -35,9 +39,12 @@ public class UserRegisterController {
 	
 	@PostMapping("/register/loginprocess")
 	public String login(@RequestParam String login_email, @RequestParam String login_user_password) {
+		UserEntity user = userService.login(login_email, login_user_password);
+		
 		if (userService.login(login_email, login_user_password) == null) {
 			return "redirect:/register";
 		} else {
+			session.setAttribute("user", user);
 			return "redirect:/authorhome";
 		}
 	}
