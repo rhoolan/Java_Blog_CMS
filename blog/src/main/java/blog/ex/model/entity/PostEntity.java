@@ -52,5 +52,4 @@ public class PostEntity {
 	@NonNull
 	@Column(name = "visitor_count")
 	private Long visitorCount;
-	
 }
