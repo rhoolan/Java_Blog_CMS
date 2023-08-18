@@ -388,3 +388,42 @@ java.lang.NullPointerException: Cannot invoke "blog.ex.model.entity.UserEntity.g
 2023-08-18T09:49:37.751+09:00  INFO 14884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
 2023-08-18T09:49:47.924+09:00 DEBUG 14884 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
 2023-08-18T09:49:57.817+09:00 DEBUG 14884 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T09:51:19.207+09:00  INFO 14884 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-18T09:51:19.227+09:00  INFO 14884 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-18T09:51:19.228+09:00  INFO 14884 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-18T09:51:19.235+09:00  INFO 14884 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-18T09:51:19.238+09:00  INFO 14884 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-18T09:51:19.244+09:00  INFO 14884 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-18T09:51:29.152+09:00  INFO 17516 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 17516 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-18T09:51:29.157+09:00  INFO 17516 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-18T09:51:29.848+09:00  INFO 17516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-18T09:51:29.919+09:00  INFO 17516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interfaces.
+2023-08-18T09:51:30.652+09:00  INFO 17516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-18T09:51:30.732+09:00  INFO 17516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-18T09:51:30.733+09:00  INFO 17516 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-18T09:51:30.865+09:00  INFO 17516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-18T09:51:30.865+09:00  INFO 17516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1646 ms
+2023-08-18T09:51:31.033+09:00  INFO 17516 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-18T09:51:31.092+09:00  INFO 17516 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-18T09:51:31.094+09:00  INFO 17516 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-18T09:51:31.243+09:00  INFO 17516 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-18T09:51:31.384+09:00  INFO 17516 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-18T09:51:31.401+09:00  INFO 17516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-18T09:51:31.588+09:00  INFO 17516 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b8fa2fa
+2023-08-18T09:51:31.590+09:00  INFO 17516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-18T09:51:31.854+09:00  INFO 17516 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-18T09:51:32.995+09:00  INFO 17516 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-18T09:51:33.057+09:00  INFO 17516 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-18T09:51:34.351+09:00  WARN 17516 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-18T09:51:35.136+09:00  INFO 17516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-18T09:51:35.146+09:00  INFO 17516 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 6.469 seconds (process running for 7.197)
+2023-08-18T09:51:35.516+09:00  INFO 17516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-18T09:51:35.517+09:00  INFO 17516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-18T09:51:35.518+09:00  INFO 17516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-18T09:51:47.086+09:00 DEBUG 17516 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T10:16:00.134+09:00  INFO 17516 --- [RMI TCP Connection(33)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-18T10:16:00.182+09:00  INFO 17516 --- [RMI TCP Connection(33)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-18T10:16:00.234+09:00  INFO 17516 --- [RMI TCP Connection(33)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-18T10:16:00.313+09:00  INFO 17516 --- [RMI TCP Connection(33)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-18T10:16:00.322+09:00  INFO 17516 --- [RMI TCP Connection(33)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-18T10:16:00.341+09:00  INFO 17516 --- [RMI TCP Connection(33)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
