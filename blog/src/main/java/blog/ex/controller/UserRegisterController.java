@@ -2,6 +2,7 @@ package blog.ex.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,13 @@ public class UserRegisterController {
 	}
 	
 	@GetMapping("/authorhome")
-	public String getAuthorHomePage() {
+	public String getAuthorHomePage(Model model) {
+		UserEntity userList = (UserEntity) session.getAttribute("user");
+		
+		/**
+		 * userListから現在ログインしている人のユーザー名を取得**/
+		String userName = userList.getUserName();
+		model.addAttribute("userName", userName);
 		return "authorhome.html";
 	}
 	
@@ -47,5 +54,12 @@ public class UserRegisterController {
 			session.setAttribute("user", user);
 			return "redirect:/authorhome";
 		}
+	}
+	
+	@GetMapping("/logout")
+	public String Logout() {
+		
+		session.invalidate();
+		return "redirect:/user/login";
 	}
 }

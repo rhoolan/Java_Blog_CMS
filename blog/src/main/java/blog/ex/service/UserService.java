@@ -37,10 +37,10 @@ public class UserService {
 		String salt = userEntity.getSalt();
 		String hashPassword = hashPassword(password+salt);
 		
-		if (userEntity == null) {
-			return null;
-		} else if (userEntity.getPassword().equals(hashPassword)) {
+		if (userEntity.getPassword().equals(hashPassword)) {
 			return userEntity;
+		}else {
+			return null;
 		}
 	}
 	
