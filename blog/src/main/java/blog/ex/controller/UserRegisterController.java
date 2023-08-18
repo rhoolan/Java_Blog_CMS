@@ -60,6 +60,6 @@ public class UserRegisterController {
 	public String Logout() {
 		
 		session.invalidate();
-		return "redirect:/user/login";
+		return "redirect:/register";
 	}
 }

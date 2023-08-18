@@ -455,3 +455,53 @@ java.lang.NullPointerException: Cannot invoke "blog.ex.model.entity.UserEntity.g
 2023-08-18T11:01:07.226+09:00  INFO 16564 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 2023-08-18T11:01:25.521+09:00 DEBUG 16564 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
 2023-08-18T11:01:25.604+09:00 DEBUG 16564 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:04:07.128+09:00  INFO 16564 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-18T11:04:07.173+09:00  INFO 16564 --- [RMI TCP Connection(14)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-18T11:04:07.177+09:00  INFO 16564 --- [RMI TCP Connection(14)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-18T11:04:07.196+09:00  INFO 16564 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-18T11:04:07.212+09:00  INFO 16564 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-18T11:04:07.241+09:00  INFO 16564 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-18T11:05:13.543+09:00  INFO 12220 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 12220 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-18T11:05:13.556+09:00  INFO 12220 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-18T11:05:15.228+09:00  INFO 12220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-18T11:05:15.366+09:00  INFO 12220 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interfaces.
+2023-08-18T11:05:16.719+09:00  INFO 12220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-18T11:05:16.751+09:00  INFO 12220 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-18T11:05:16.752+09:00  INFO 12220 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-18T11:05:17.056+09:00  INFO 12220 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-18T11:05:17.057+09:00  INFO 12220 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3337 ms
+2023-08-18T11:05:17.414+09:00  INFO 12220 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-18T11:05:17.588+09:00  INFO 12220 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-18T11:05:17.596+09:00  INFO 12220 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-18T11:05:17.974+09:00  INFO 12220 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-18T11:05:18.309+09:00  INFO 12220 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-18T11:05:18.356+09:00  INFO 12220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-18T11:05:18.741+09:00  INFO 12220 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@668a32a4
+2023-08-18T11:05:18.747+09:00  INFO 12220 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-18T11:05:19.396+09:00  INFO 12220 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-18T11:05:21.193+09:00  INFO 12220 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-18T11:05:21.317+09:00  INFO 12220 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-18T11:05:22.296+09:00  WARN 12220 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-18T11:05:23.220+09:00  INFO 12220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-18T11:05:23.231+09:00  INFO 12220 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 10.736 seconds (process running for 12.569)
+2023-08-18T11:05:32.104+09:00  INFO 12220 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-18T11:05:32.108+09:00  INFO 12220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-18T11:05:32.114+09:00  INFO 12220 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-08-18T11:05:53.551+09:00 DEBUG 12220 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:05:53.575+09:00 DEBUG 12220 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:06:04.099+09:00 DEBUG 12220 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:06:04.108+09:00 DEBUG 12220 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:06:36.198+09:00 DEBUG 12220 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:06:36.468+09:00 DEBUG 12220 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:14:54.103+09:00 DEBUG 12220 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:14:54.108+09:00 DEBUG 12220 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:15:03.557+09:00 DEBUG 12220 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:15:03.563+09:00 DEBUG 12220 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:15:18.694+09:00 DEBUG 12220 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:15:18.702+09:00 DEBUG 12220 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-18T11:35:22.887+09:00  INFO 12220 --- [RMI TCP Connection(38)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-18T11:35:57.395+09:00  INFO 12220 --- [RMI TCP Connection(38)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-18T11:36:08.759+09:00  INFO 12220 --- [RMI TCP Connection(38)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-18T11:36:34.157+09:00  INFO 12220 --- [RMI TCP Connection(38)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-18T11:36:52.838+09:00  INFO 12220 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-18T11:36:56.567+09:00  INFO 12220 --- [RMI TCP Connection(38)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
