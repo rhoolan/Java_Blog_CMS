@@ -52,4 +52,14 @@ public class PostEntity {
 	@NonNull
 	@Column(name = "visitor_count")
 	private Long visitorCount;
+	
+	public PostEntity(@NonNull String postTitle, @NonNull String postImage, 
+			@NonNull LocalDate postDate, @NonNull String postContent, 
+			@NonNull Long postAuthor) {
+		this.postTitle = postTitle;
+		this.postImage = postImage;
+		this.postDate = postDate;
+		this.postContent = postContent;
+		this.postAuthor = postAuthor;
+	}
 }

@@ -20,71 +20,21 @@
             </ul>
         </section>
         <section id="new-post-wrapper">
-        <a href="newpost.html" id="new-post">新投稿</a>
+        <a th:href="@{authorhome/newpost}" id="new-post">新投稿</a>
     </section>
     </header>
 
     <main>
         <section id="posts-wrapper">
-            <section class="blog-post">
+            <article class="blog-post" th:each="post:${postList}">
                 <img src="/img/kouenji.jpg" alt="blog-image">
-                <h3>投稿タイトル</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 th:text="${post.postTitle}"></h3>
+                <p th:text="${post.postContent}"></p>
                 <div class="buttons">
                     <a href="editpost.html" class="edit-post">編集</a>
                     <a href="#" class="delete-post">削除</a>
                 </div>
-            </section>
-
-            <section class="blog-post">
-                <img src="/img/kouenji.jpg" alt="blog-image">
-                <h3>投稿タイトル</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="buttons">
-                    <a href="editpost.html" class="edit-post">編集</a>
-                    <a href="#" class="delete-post">削除</a>
-                </div>
-            </section>
-
-            <section class="blog-post">
-                <img src="/img/kouenji.jpg" alt="blog-image">
-                <h3>投稿タイトル</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="buttons">
-                    <a href="editpost.html" class="edit-post">編集</a>
-                    <a href="#" class="delete-post">削除</a>
-                </div>
-            </section>
-
-            <section class="blog-post">
-                <img src="/img/kouenji.jpg" alt="blog-image">
-                <h3>投稿タイトル</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="buttons">
-                    <a href="editpost.html" class="edit-post">編集</a>
-                    <a href="#" class="delete-post">削除</a>
-                </div>
-            </section>
-
-            <section class="blog-post">
-                <img src="/img/kouenji.jpg" alt="blog-image">
-                <h3>投稿タイトル</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="buttons">
-                    <a href="editpost.html" class="edit-post">編集</a>
-                    <a href="#" class="delete-post">削除</a>
-                </div>
-            </section>
-
-            <section class="blog-post">
-                <img src="/img/kouenji.jpg" alt="blog-image">
-                <h3>投稿タイトル</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="buttons">
-                    <a href="editpost.html" class="edit-post">編集</a>
-                    <a href="#" class="delete-post">削除</a>
-                </div>
-            </section>
+            </article>
         </section>
     </main>
 </body>

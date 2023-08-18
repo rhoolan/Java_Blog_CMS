@@ -52,7 +52,7 @@ public class UserRegisterController {
 			return "redirect:/register";
 		} else {
 			session.setAttribute("user", user);
-			return "redirect:/authorhome";
+			return "redirect:/authorhome/list";
 		}
 	}
 	
