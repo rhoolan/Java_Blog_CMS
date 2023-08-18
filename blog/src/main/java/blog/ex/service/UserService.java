@@ -32,6 +32,20 @@ public class UserService {
 		}
 	}
 	
+	public UserEntity login(String email, String password) {
+		UserEntity userEntity = userDao.findByEmail(email);
+		String salt = userEntity.getSalt();
+		String hashPassword = hashPassword(password+salt);
+		
+		if (userEntity == null) {
+			return null;
+		} else if (userEntity.getPassword().equals(hashPassword)) {
+			return userEntity;
+		} else {
+			return null;
+		}
+	}
+	
 	private String hashPassword(String password) {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");
