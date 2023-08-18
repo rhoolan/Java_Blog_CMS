@@ -1,0 +1,17 @@
+#moderate-comments {
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    color: black;
+    border: solid 1px black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    top: -75px;
+    left: 10px;
+}
+
+#moderate-comments:hover {
+    filter: brightness(90%);
+}

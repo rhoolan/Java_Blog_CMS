@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    font-family: Poppins-Regular, sans-serif
+}
+
+#header-wrapper {
+    width: 1000px;
+    height: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+header {
+    background-color: #121212;
+    height: 200px;
+}
+
+header h1 {
+    color: whitesmoke;
+    line-height: 200px;
+    font-size: 40px;
+}
+
+#header-wrapper a {
+    color: whitesmoke;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 200px;
+    list-style: none;
+}
+
+#header-wrapper a:hover {
+    filter:brightness(80%);
+}
+
+#content {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#post {
+    margin-bottom: 50px;
+}
+
+#post h2 {
+    margin-bottom: 10px;
+}
+
+.author {
+    margin-bottom: 15px;
+}
+
+.post-date {
+    font-size: 12px;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+
+#post img {
+    width: 800px;
+    height: 400px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#comments {
+    width: 700px;
+    margin: 0 auto;
+    border-top: 1px dashed gray;
+    padding-top: 35px;
+    margin-bottom: 50px;
+}
+
+#comments h4 {
+    margin-bottom: 10px;
+}
+
+#comments ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+}
+
+.comment {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed grey;
+    padding-bottom: 10px;
+}
+.comment-id {
+}
+.comment-date{
+}
+
+.comment-content {
+}
+
+#post-comment {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#submit-comment {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 164px;
+    height: 40px;
+    align-self: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.submit-comment:hover {
+    transition: all .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }

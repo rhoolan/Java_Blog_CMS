@@ -1,0 +1,121 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: Poppins-Regular, sans-serif
+}
+
+#header-wrapper {
+    width: 1000px;
+    height: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+header {
+    background-color: #121212;
+    height: 200px;
+}
+
+header h1 {
+    color: whitesmoke;
+    line-height: 200px;
+    font-size: 40px;
+}
+
+header ul {
+    margin-top: 90px;
+    display: flex;
+    color: whitesmoke;
+}
+
+header ul li {
+    margin-left: 15px;
+    list-style: none;
+}
+
+header ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    filter:brightness(80%);
+}
+
+#new-post-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#new-post{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    color: black;
+    border: solid 1px black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    top: -75px;
+}
+
+#new-post:hover {
+    filter: brightness(90%);
+}
+
+#new-post h3 {
+    text-align: center; 
+    margin-top: 10px;  
+}
+
+/* Moderate comments */
+
+#comments {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.delete {
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 2px 4px 2px 4px;
+    color: black;
+    border: solid 1px black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin-right: 4px;
+}
+
+.comment-content{
+    border-left: 1px dotted black;
+    border-right: 1px dotted black;
+    width: 800px;
+    padding-left: 10px;
+    line-height: 25px;
+}
+
+.post-id {
+    text-align: center;
+    line-height: 25px;
+    width: 100px;
+}
