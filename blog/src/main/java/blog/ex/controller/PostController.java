@@ -1,6 +1,7 @@
 package blog.ex.controller;
 
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -20,7 +21,7 @@ import blog.ex.model.entity.UserEntity;
 import blog.ex.service.PostService;
 import jakarta.servlet.http.HttpSession;
 
-@RequestMapping("/authorhome")
+@RequestMapping("/list")
 
 @Controller
 public class PostController {
@@ -31,20 +32,8 @@ public class PostController {
 	@Autowired 
 	private HttpSession session;
 	
-	@GetMapping("/authorhome/list")
-	public String getIndexPostList(Model model) {
-		UserEntity userList = (UserEntity) session.getAttribute("user");
-		Long userId = userList.getUserId();
-		String userName = userList.getUserName();
-	
-		List<PostEntity>postList = postService.findAllBlogPostByPostAuthor(userId);
-		model.addAttribute("userName", userName);
-		model.addAttribute("postList", postList);
-		return "authorhome.html";
-	}
-	
 	//navigate to new post page 
-	@GetMapping("/authorhome/newpost")
+	@GetMapping("/newpost")
 	public String getNewPostPage(Model model) {
 		UserEntity userList = (UserEntity) session.getAttribute("user");
 		
@@ -56,17 +45,24 @@ public class PostController {
 	
 	@PostMapping("/author/newpost/process")
 	public String savePost(@RequestParam String postTitle,
+			@RequestParam MultipartFile postImage,
 			@RequestParam String postContent) {
 				
 		UserEntity userList = (UserEntity) session.getAttribute("user");
 		Long userId = userList.getUserId();
-//		String imgFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + postImage.getOriginalFilename();
+		String imgFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + postImage.getOriginalFilename();
 		LocalDate date = LocalDate.now();
-		String postImage = "image";
-		if(postService.createBlogPost(postTitle, postImage, date, postContent, userId)) {
-			return "redirect:/authorhome/list";
-		}else {
-			return "redirect:/authorhome/newpost";
+		
+		try {
+			Files.copy(postImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + imgFileName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		
+		if (postService.createBlogPost(postTitle, imgFileName, date, postContent, userId)) {
+			return "redirect:/author/home/list";
+		} else {
+			return "redirect:/author/hone/newpost";
 		}
 		
 	}
