@@ -1,6 +1,7 @@
 package blog.ex.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +20,54 @@ public class PostService {
 	@Autowired
 	private PostDao postDao;
 	
-	public List<PostEntity> findAllBlogPostByPostAuthor(Long postAuthor){
+	public List<PostEntity> findAllBlogPostByPostAuthorOrderByPostDateDesc(Long postAuthor){
 		if(postAuthor == null) {
 			return null;
 		} else {
-			return postDao.findAllBlogPostByPostAuthor(postAuthor);
+			return postDao.findAllBlogPostByPostAuthorOrderByPostDateDesc(postAuthor);
 		}
 	}
 	
+	// Get single blog post 
+	public PostEntity getPost(Long postId) {
+		if (postId == null) {
+			return null;
+		} else {
+			return postDao.findByPostId(postId);
+		}
+	}
+	
+	// edit blog post function 
+	public boolean editPost(String postTitle, String postImage, String postContent, Long postId, Long userId ) {
+		PostEntity postList = postDao.findByPostId(postId);
+		if(userId==null) {
+			return false;
+		}else {
+			postList.setPostTitle(postTitle);
+			postList.setPostImage(postImage);
+			postList.setPostContent(postContent);
+			postDao.save(postList);
+			return true;
+		}
+			
+	}
+	
 	// save function
-	public boolean createBlogPost(String postTitle, String postImage, LocalDate postDate, String postContent, Long postAuthor) {
-		postDao.save(new PostEntity(postTitle, postImage, postDate, postContent, postAuthor));
+	public boolean createBlogPost(String postTitle, String postImage, LocalDateTime postDate, String postContent, Long postAuthor, Long visitorCount) {
+		postDao.save(new PostEntity(postTitle, postImage, postDate, postContent, postAuthor, visitorCount));
 		return true;
 	}
 	
+	// delete 
+	public boolean deletePost(Long postId) {
+		if (postId == null) {
+			return false;
+		} else {
+			postDao.deleteByPostId(postId);
+			return true;
+		}
+	}
+
 
 	
 }

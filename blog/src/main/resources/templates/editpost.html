@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/newpost.css">
+    <link rel="stylesheet" href="/css/editpost.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,17 +23,19 @@
     </header>
 
     <main>
-        <h2>Create new post</h2>
-        <section id="write-post" >
-            <form method="post" th:action="@{/author/home/author/newpost/process}" enctype="multipart/form-data">
+        <h2>Edit post</h2>
+        <section id="write-post">
+            <form th:action="@{/author/home/update}" method="post" enctype="multipart/form-data">
                 <label for="post-title">Post title</label>
-                <input type="text" name="postTitle" id="">
+                <input type="text" name="postTitle" id="" th:value="${postList.postTitle}">
                 <label for="post-image">Post image</label>
                 <input type="file" name="postImage" id="">
                 <label for="post-content">Post content</label>
-                <textarea name="postContent" id="" cols="105" rows="10"></textarea>
+                <textarea name="postContent" id="" cols="105" rows="10" th:text="${postList.postContent}"></textarea>
                 <div id="buttons">
-                    <input type="submit" value="submit" id="submit">
+					<input type="hidden" name="postId" id="" th:value="${postList.postId}">
+                    <input type="submit" value="save" id="save">
+                    <input type="submit" value="delete" id="delete" th:formaction="@{/author/home/delete}">
                 </div>
             </form>
         </section>

@@ -1,6 +1,6 @@
 package blog.ex.model.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -37,9 +37,9 @@ public class PostEntity {
 	private String postImage;
 	
 	@NonNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd-HH-mm-ss-")
 	@Column(name = "post_date")
-	private LocalDate postDate;
+	private LocalDateTime postDate;
 	
 	@NonNull
 	@Column(name = "post_content")
@@ -54,12 +54,13 @@ public class PostEntity {
 	private Long visitorCount;
 	
 	public PostEntity(@NonNull String postTitle, @NonNull String postImage, 
-			@NonNull LocalDate postDate, @NonNull String postContent, 
-			@NonNull Long postAuthor) {
+			@NonNull LocalDateTime postDate2, @NonNull String postContent, 
+			@NonNull Long postAuthor,  @NonNull Long visitorCount) {
 		this.postTitle = postTitle;
 		this.postImage = postImage;
-		this.postDate = postDate;
+		this.postDate = postDate2;
 		this.postContent = postContent;
 		this.postAuthor = postAuthor;
+		this.visitorCount = visitorCount;
 	}
 }
