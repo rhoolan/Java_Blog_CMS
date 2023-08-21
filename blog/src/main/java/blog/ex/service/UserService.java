@@ -53,4 +53,20 @@ public class UserService {
 			throw new RuntimeException("Hashing Algorithm not found", e);
 		}
 	}
+	
+	public boolean updateUser(String currentUserEmail, String newUserName, String newUserEmail, String newUserPassword) {
+		UserEntity userEntity = userDao.findByEmail(currentUserEmail);
+		String salt = userEntity.getSalt();
+		String newPasswordHash = hashPassword(newUserPassword+salt);
+		
+		if(userEntity==null) {
+			return false;
+		}else {
+			userEntity.setUserName(newUserName);
+			userEntity.setEmail(newUserEmail);
+			userEntity.setPassword(newPasswordHash);
+			userDao.save(userEntity);
+			return true;
+		}
+	}
 }

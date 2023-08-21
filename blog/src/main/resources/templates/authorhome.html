@@ -15,7 +15,7 @@
 
             <ul>
                 <li><a href="#">ホーム</a></li>
-                <li><a href="editpersonalinfo.html">個人情報変更</a></li>
+                <li><a th:href="@{/author/home/edituserinfo}">個人情報変更</a></li>
                 <li><a th:href="@{/logout}">ログアウト</a></li>
             </ul>
         </section>
@@ -27,20 +27,20 @@
     <main>
         <section id="posts-wrapper">
             <article class="blog-post" th:each="post:${postList}">
-                <img src="/img/kouenji.jpg" alt="blog-image">
+                <img th:src="@{/blog-img/{image}(image=${post.postImage})}">
                 <h3 th:text="${post.postTitle}"></h3>
-                <p th:text="${post.postContent}"></p>
+                <p th:text="${post.postImage}"></p>
                 <div class="buttons">
                     <a th:href="@{/author/home/edit/{postId}(postId=${post.postId})}" class="edit-post"> Edit </a>
-                   <!-- <a th:href="@{/author/home/delete" class="delete-post" th:text="${post.postId}" ></a> -->
                    <form th:action="@{/author/home/delete}" method="post">
 					   	<input type="hidden" name="postId"  th:value="${post.postId}">
-						<input type="submit" value="Delete">
+						<input type="submit" value="Delete" onclick="confirmDelete()">
 					</form>
                 </div>
             </article>
         </section>
     </main>
+        <script src="/js/source.js"></script>
 </body>
 
 </html>

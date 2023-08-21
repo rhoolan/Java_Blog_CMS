@@ -25,7 +25,7 @@
     <main>
         <h2>Edit post</h2>
         <section id="write-post">
-            <form th:action="@{/author/home/update}" method="post" enctype="multipart/form-data">
+            <form th:action="@{/author/home/update}" method="post" enctype="multipart/form-data" onSubmit="confirmDelete()">
                 <label for="post-title">Post title</label>
                 <input type="text" name="postTitle" id="" th:value="${postList.postTitle}">
                 <label for="post-image">Post image</label>
@@ -41,5 +41,6 @@
         </section>
     </main>
     
+    <script src="/js/source.js"></script>
 </body>
 </html>

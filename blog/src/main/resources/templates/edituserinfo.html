@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/editpersonalinfo.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <section id="header-wrapper">
+            <h1>おかえりなさい, AUTHORNAME</h1>
+
+            <ul>
+                <li><a th:href="@{/author/home/list}">ホーム</a></li>
+                <li><a th:href="@{/author/home/edituserinfo}">個人情報変更</a></li>
+                <li><a th:href="@{/logout}">ログアウト</a></li>
+            </ul>
+        </section>
+    </header>
+
+    <main>
+        <h2>個人情報を変更</h2>
+        <section id="personal-info-wrapper">
+        <section id="personal-info">
+            <form method="post" th:action="@{/author/home/updateuserinfo}">
+				<input type="text" name="currentUserEmail" id="" th:value="${user.email}">
+                <label for="post-title">Username</label>
+                <input type="text" name="newUserName" id="" th:value="${user.userName}">
+                <label for="post-title">Email</label>
+                <input type="text" name="newUserEmail" id="" th:value="${user.email}">
+                <label for="post-title">Password</label>
+                <input type="password" name="newUserPassword" id="" placeholder="PASSWORD">
+                <label for="post-title">Confirm Password</label>
+                <input type="password" name="" id="" placeholder="CONFIRM PASSWORD">
+                <div id="buttons">
+                    <input type="submit" value="save" id="save">
+                </div>
+            </form>
+        </section>
+    </section>
+    </main>
+    
+</body>
+</html>
