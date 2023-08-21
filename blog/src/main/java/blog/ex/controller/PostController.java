@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import blog.ex.model.entity.PostEntity;
 import blog.ex.model.entity.UserEntity;
 import blog.ex.service.PostService;
+import blog.ex.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @RequestMapping("/author/home")
@@ -30,6 +31,9 @@ public class PostController {
 
 	@Autowired
 	private PostService postService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@Autowired 
 	private HttpSession session;
@@ -125,5 +129,18 @@ public class PostController {
 			return "redirect:/author/home/list"; 
 		}
 	}
+	
+	//view post 
+	@GetMapping("/viewpost/{postId}")
+	public String getPost(@PathVariable Long postId, Model model) {
+		PostEntity post = postService.getPost(postId);
+		Long postAuthor = post.getPostAuthor();
+		UserEntity author = userService.findByUserId(postAuthor);
+		
+		model.addAttribute("post", post);
+		model.addAttribute("author", author);
+		return "viewpost.html";
+	}
 }
+
 

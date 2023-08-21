@@ -9,12 +9,12 @@
 <body>
     <header>
         <section id="header-wrapper">
-            <h1>おかえりなさい, AUTHORNAME</h1>
+            <h1 th:text="${userName}+', おかえりなさい'"></h1>
 
             <ul>
-                <li><a href="authorhome.html">ホーム</a></li>
-                <li><a href="#">個人情報変更</a></li>
-                <li><a href="#">ログアウト</a></li>
+                <li><a th:href="@{/author/home/list}">ホーム</a></li>
+                <li><a th:href="@{/author/home/edituserinfo}">個人情報変更</a></li>
+                <li><a th:href="@{/logout}">ログアウト</a></li>
             </ul>
         </section>
         <section id="new-post-wrapper">

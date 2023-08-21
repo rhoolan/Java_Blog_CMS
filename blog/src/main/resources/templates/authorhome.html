@@ -11,10 +11,10 @@
 <body>
     <header>
         <section id="header-wrapper">
-            <h1 th:text="${userName}+'おかえりなさい'"></h1>
+            <h1 th:text="${userName}+', おかえりなさい'"></h1>
 
             <ul>
-                <li><a href="#">ホーム</a></li>
+                <li><a th:href="@{/author/home/list}">ホーム</a></li>
                 <li><a th:href="@{/author/home/edituserinfo}">個人情報変更</a></li>
                 <li><a th:href="@{/logout}">ログアウト</a></li>
             </ul>
@@ -28,7 +28,7 @@
         <section id="posts-wrapper">
             <article class="blog-post" th:each="post:${postList}">
                 <img th:src="@{/blog-img/{image}(image=${post.postImage})}">
-                <h3 th:text="${post.postTitle}"></h3>
+                <a th:href="@{/author/home/viewpost/{postId}(postId=${post.postId})}"><h3 th:text="${post.postTitle}"></h3></a>
                 <p th:text="${post.postImage}"></p>
                 <div class="buttons">
                     <a th:href="@{/author/home/edit/{postId}(postId=${post.postId})}" class="edit-post"> Edit </a>

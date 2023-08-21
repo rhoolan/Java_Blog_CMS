@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import blog.ex.model.dao.UserDao;
+import blog.ex.model.entity.PostEntity;
 import blog.ex.model.entity.UserEntity;
 
 @Service
@@ -69,4 +70,13 @@ public class UserService {
 			return true;
 		}
 	}
+
+	public UserEntity findByUserId(Long postAuthor) {
+		if (postAuthor == null) {
+			return null;
+		} else {
+			return userDao.findByUserId(postAuthor);
+		}
+	}
+	
 }
