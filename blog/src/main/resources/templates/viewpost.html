@@ -58,9 +58,10 @@
         </section>
 
         <section id="post-comment">
-            <form action="">
+            <form method="post" th:action="@{/postcomment}">
                 <h4>Post comment</h4>
-                <textarea name="" id="" cols="30" rows="10" maxlength="120" placeholder="Write a comment. You only have 120 characters..."></textarea>
+                <input type="hidden" name="postId"  th:value="${post.postId}">
+                <textarea name="commentContents" id="" cols="30" rows="10" maxlength="120" placeholder="Write a comment. You only have 120 characters..."></textarea>
                 <input type="submit" value="post" id="submit-comment">
             </form>
         </section>
