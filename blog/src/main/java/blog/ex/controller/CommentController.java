@@ -17,15 +17,15 @@ public class CommentController {
 
 	@Autowired 
 	private CommentService commentService;
-	
-	@GetMapping 
-	
+		 
 	@PostMapping("/postcomment")
 	public String saveComment(@RequestParam Long postId,
-			@RequestParam String commentContents) {
+			@RequestParam String commentContent) {
 		
+		System.out.println(postId);
+		System.out.println(commentContent);
 		LocalDateTime date = LocalDateTime.now();
-		commentService.createComment(postId, commentContents, date);
-		return "redirect:'/author/home/viewpost/'+postId";
+		commentService.createComment(postId, commentContent, date);
+		return "redirect:/author/home/viewpost/"+postId;
 	}
 }

@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import blog.ex.model.entity.CommentEntity;
 import blog.ex.model.entity.PostEntity;
 import blog.ex.model.entity.UserEntity;
+import blog.ex.service.CommentService;
 import blog.ex.service.PostService;
 import blog.ex.service.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -34,6 +36,9 @@ public class PostController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private CommentService commentService;
 	
 	@Autowired 
 	private HttpSession session;
@@ -136,9 +141,12 @@ public class PostController {
 		PostEntity post = postService.getPost(postId);
 		Long postAuthor = post.getPostAuthor();
 		UserEntity author = userService.findByUserId(postAuthor);
+		List<CommentEntity> comments = commentService.findAllCommentsByPostIdOrderByCommentDateDesc(postId);
 		
+		model.addAttribute("comments", comments);
 		model.addAttribute("post", post);
 		model.addAttribute("author", author);
+		postService.incrementVisitorCount(postId);
 		return "viewpost.html";
 	}
 }

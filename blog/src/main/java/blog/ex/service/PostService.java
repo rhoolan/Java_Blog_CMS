@@ -68,6 +68,14 @@ public class PostService {
 		}
 	}
 
+	// increment visitor count 
+	public void incrementVisitorCount(Long postId) {
+		PostEntity post = postDao.findByPostId(postId);
+		Long currentVisitorCount = post.getVisitorCount();
+		Long newVisitorCount = currentVisitorCount + 1;
+		post.setVisitorCount(newVisitorCount);
+		postDao.save(post);
+	}
 
 	
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/viewpost.css}">
-    <title>Document</title>
+    <title th:text="${post.postTitle}"></title>
 </head>
 <body>
     <header>
@@ -32,36 +32,20 @@
 
         <section id="comments">
             <h4>Comments</h4>
-            <section class="comment">
+            <section class="comment" th:each="comment:${comments}">
                 <ul>
-                    <li class="comment-id">#100</li>
-                    <li class="comment-date">2023/17/08</li>
-                    <li class="comment-content">This is a comment.</li>
+                    <li class="comment-id" th:text="${comment.commentId}"></li>
+                    <li class="comment-date" th:text="${comment.commentDate.toLocalDate()}"></li>
+                    <li class="comment-content" th:text="${comment.commentContent}"></li>
                 </ul>
             </section>
 
-            <section class="comment">
-                <ul>
-                    <li class="comment-id">#100</li>
-                    <li class="comment-date">2023/17/08</li>
-                    <li class="comment-content">This is a comment.</li>
-                </ul>
-            </section>
-
-            <section class="comment">
-                <ul>
-                    <li class="comment-id">#100</li>
-                    <li class="comment-date">2023/17/08</li>
-                    <li class="comment-content">This is a comment.</li>
-                </ul>
-            </section>
-        </section>
-
+    
         <section id="post-comment">
             <form method="post" th:action="@{/postcomment}">
                 <h4>Post comment</h4>
                 <input type="hidden" name="postId"  th:value="${post.postId}">
-                <textarea name="commentContents" id="" cols="30" rows="10" maxlength="120" placeholder="Write a comment. You only have 120 characters..."></textarea>
+                <textarea name="commentContent" id="" cols="30" rows="10" maxlength="120" placeholder="Write a comment. You only have 120 characters..."></textarea>
                 <input type="submit" value="post" id="submit-comment">
             </form>
         </section>

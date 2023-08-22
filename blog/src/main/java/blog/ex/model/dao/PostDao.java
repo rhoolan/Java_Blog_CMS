@@ -11,6 +11,7 @@ public interface PostDao extends JpaRepository<PostEntity, Long>{
 	List<PostEntity> findAllBlogPostByPostAuthorOrderByPostDateDesc(Long postAuthor);
 	PostEntity save(PostEntity postEntity);
 	PostEntity findByPostId(Long postId);
+//	PostEntity incrementVisitorCount(Long postId);
 	
 	@Transactional
 	List<PostEntity> deleteByPostId(Long postId);

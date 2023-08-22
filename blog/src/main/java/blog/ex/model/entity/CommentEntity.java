@@ -32,10 +32,12 @@ public class CommentEntity {
 	private Long postId;
 	
 	@NonNull
-	@Column(name = "comment_contents")
-	private String commentContents;
+	@Column(name = "comment_content")
+	private String commentContent;
 	
 	@NonNull
 	@Column(name = "comment_date")
 	private LocalDateTime commentDate;
+	
+	
 }
