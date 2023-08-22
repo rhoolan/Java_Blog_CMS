@@ -9,7 +9,7 @@
 <body>
     <header>
         <section id="header-wrapper">
-            <h1 th:text="${userName}+', おかえりなさい'"></h1>
+            <h1 th:text="${user.userName}+', おかえりなさい'"></h1>
 
             <ul>
                 <li><a th:href="@{/author/home/list}">ホーム</a></li>
@@ -23,7 +23,7 @@
         <h2>個人情報を変更</h2>
         <section id="personal-info-wrapper">
         <section id="personal-info">
-            <form method="post" th:action="@{/author/home/updateuserinfo}">
+            <form method="post" th:action="@{/author/home/updateuserinfo}" onSubmit="return confirm('Are you sure you wish to save changes?');">
 				<input type="text" name="currentUserEmail" id="" th:value="${user.email}">
                 <label for="post-title">Username</label>
                 <input type="text" name="newUserName" id="" th:value="${user.userName}">

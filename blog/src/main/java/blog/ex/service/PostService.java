@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import blog.ex.model.dao.CommentDao;
 import blog.ex.model.dao.PostDao;
+import blog.ex.model.entity.CommentEntity;
 import blog.ex.model.entity.PostEntity;
 import blog.ex.model.entity.UserEntity;
 import jakarta.servlet.http.HttpSession;
@@ -19,6 +21,9 @@ public class PostService {
 	
 	@Autowired
 	private PostDao postDao;
+	
+	@Autowired 
+	private CommentDao commentDao;
 	
 	public List<PostEntity> findAllBlogPostByPostAuthorOrderByPostDateDesc(Long postAuthor){
 		if(postAuthor == null) {
@@ -38,19 +43,33 @@ public class PostService {
 	}
 	
 	// edit blog post function 
-	public boolean editPost(String postTitle, String postImage, String postContent, Long postId, Long userId ) {
+	//public boolean editPost(String postTitle, String postImage, String postContent, Long postId, Long userId ) {
+//		PostEntity postList = postDao.findByPostId(postId);
+//		if(userId==null) {
+//			return false;
+//		}else {
+//			postList.setPostTitle(postTitle);
+//			postList.setPostImage(postImage);
+//			postList.setPostContent(postContent);
+//			postDao.save(postList);
+//			return true;
+//		}
+//			
+//	}
+	
+	public boolean editPost(String postTitle, String postContent, Long postId, Long userId ) {
 		PostEntity postList = postDao.findByPostId(postId);
 		if(userId==null) {
 			return false;
 		}else {
 			postList.setPostTitle(postTitle);
-			postList.setPostImage(postImage);
 			postList.setPostContent(postContent);
 			postDao.save(postList);
 			return true;
 		}
 			
 	}
+	
 	
 	// save function
 	public boolean createBlogPost(String postTitle, String postImage, LocalDateTime postDate, String postContent, Long postAuthor, Long visitorCount) {
@@ -63,6 +82,10 @@ public class PostService {
 		if (postId == null) {
 			return false;
 		} else {
+			List<CommentEntity> comments = commentDao.findAllCommentsByPostIdOrderByCommentDateDesc(postId);
+			for (CommentEntity comment: comments) {
+				commentDao.deleteById(comment.getCommentId());
+			}
 			postDao.deleteByPostId(postId);
 			return true;
 		}
@@ -77,5 +100,9 @@ public class PostService {
 		postDao.save(post);
 	}
 
+	// search bar 
+	public List<PostEntity> searchPosts(String searchTerm, Long userId){
+		return postDao.findByPostTitleContainingOrPostContentContainingAndPostAuthor(searchTerm, searchTerm, userId);
+	}
 	
 }

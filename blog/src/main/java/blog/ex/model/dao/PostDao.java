@@ -15,4 +15,7 @@ public interface PostDao extends JpaRepository<PostEntity, Long>{
 	
 	@Transactional
 	List<PostEntity> deleteByPostId(Long postId);
+	
+	//Search bar 
+	List<PostEntity> findByPostTitleContainingOrPostContentContainingAndPostAuthor(String searchTitleTerm, String searchContentTerm, Long userId);
 }

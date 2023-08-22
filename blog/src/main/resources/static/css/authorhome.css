@@ -107,11 +107,21 @@ header ul li a:hover {
     filter: brightness(50%);
 }
 
-.blog-post p {
+.post-content {
     position: absolute;
     top: 185px;
     padding: 10px;
     text-align: left;
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.visitor-count {
+	position:absolute;
+	bottom: 5px;
+	left: 5px;
 }
 
 .buttons {
@@ -128,7 +138,6 @@ header ul li a:hover {
     text-align: center;
     font-weight: bold;
     text-decoration: none;
-    display: inline-block;
     padding: 3px;
 }
 
@@ -140,7 +149,18 @@ header ul li a:hover {
     background-color: lightsalmon;
 }
 
-.delete-post {
-    background-color: lightcoral;
+.delete-btn {
+	background-color: red;
+    width: 36px;
+    height: 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+input.delete-btn:hover {
+    transition: all .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 

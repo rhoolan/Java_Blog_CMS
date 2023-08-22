@@ -9,8 +9,12 @@
 <body>
     <header>
         <section id="header-wrapper">
-            <a href="index.html"><h1>Blog Title</h1></a>
-            <a href="login">Login</a>
+            <h1>Java Blog CMS</h1>
+
+            <ul>
+                <li><a th:href="@{/author/home/list}">Author home</a></li>
+                <li><a th:href="@{/login}">Login</a></li>
+            </ul>
         </section>
     </header>
 
@@ -18,12 +22,9 @@
         <section id="content">
         <section id="post">
             <h2 th:text="${post.postTitle}"></h2>
-            <p class="author" th:text="${author.userName}"></p>
-            <p class="post-date" th:text="${post.postDate.toLocalDate()}"></p>
-            <ul class="tags">
-                <li>tag1</li>
-                <li>tag1</li>
-            </ul>
+            <p class="author" th:text="'Author: '+${author.userName}"></p>
+            <p class="post-date" th:text="'Post Date: '+${post.postDate.toLocalDate()}"></p>
+  			<p class="post-date" th:text="'View count: '+${post.visitorCount}"></p>
             <img th:src="@{/blog-img/{image}(image=${post.postImage})}" alt="post title">
             
             <p th:text="${post.postContent}"></p>

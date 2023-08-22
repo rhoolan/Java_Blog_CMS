@@ -25,17 +25,17 @@
     <main>
         <h2>Edit post</h2>
         <section id="write-post">
-            <form th:action="@{/author/home/update}" method="post" enctype="multipart/form-data" onSubmit="confirmDelete()">
+            <form th:action="@{/author/home/update}" method="post" enctype="multipart/form-data" onSubmit="return confirm('Are you sure you wish to save changes?');">
                 <label for="post-title">Post title</label>
                 <input type="text" name="postTitle" id="" th:value="${postList.postTitle}">
-                <label for="post-image">Post image</label>
-                <input type="file" name="postImage" id="">
+                <!--<label for="post-image">Post image</label>
+                <input type="file" name="postImage" id="">-->
                 <label for="post-content">Post content</label>
                 <textarea name="postContent" id="" cols="105" rows="10" th:text="${postList.postContent}"></textarea>
                 <div id="buttons">
 					<input type="hidden" name="postId" id="" th:value="${postList.postId}">
                     <input type="submit" value="save" id="save">
-                    <input type="submit" value="delete" id="delete" th:formaction="@{/author/home/delete}">
+                    <input type="submit" value="delete" id="delete" th:formaction="@{/author/home/delete}" onSubmit="return confirm('Are you sure you wish to delete?');">
                 </div>
             </form>
         </section>

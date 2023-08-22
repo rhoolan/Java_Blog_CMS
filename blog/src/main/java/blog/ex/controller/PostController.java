@@ -26,20 +26,25 @@ import blog.ex.service.PostService;
 import blog.ex.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
+//＠GetMappingアノテーションは、HTTPのリクエストに対するマッピングを設定する
 @RequestMapping("/author/home")
 
 @Controller
 public class PostController {
 
+	// Autowiredアノテーションで、DIコンテナが自動的にUserServiceインスタンスを注入するために使用されます。PostControllerクラスの中にPostServiceクラスのメソッド呼び出すことが出来ます
 	@Autowired
 	private PostService postService;
 	
+	// Autowiredアノテーションで、DIコンテナが自動的にUserServiceインスタンスを注入するために使用されます。PostControllerクラスの中にUserServiceクラスのメソッド呼び出すことが出来ます
 	@Autowired
 	private UserService userService;
 	
+	// Autowiredアノテーションで、DIコンテナが自動的にCommentServiceインスタンスを注入するために使用されます。PostControllerクラスの中にcommentServiceクラスのメソッド呼び出すことが出来ます
 	@Autowired
 	private CommentService commentService;
 	
+	// Autowiredアノテーションで、DIコンテナが自動的にHttpSessionインスタンスを注入するために使用されます。PostControllerクラスの中にHttpSessionクラスのメソッド呼び出すことが出来ます
 	@Autowired 
 	private HttpSession session;
 	
@@ -99,24 +104,41 @@ public class PostController {
 	}
 	
 	//update post
+//	@PostMapping("/update")
+//	public String postUpdate(@RequestParam String postTitle,
+//			@RequestParam MultipartFile postImage,
+//			@RequestParam String postContent,
+//			@RequestParam Long postId,
+//			Model model) {
+//		
+//		UserEntity userList = (UserEntity) session.getAttribute("user");
+//		Long userId = userList.getUserId();
+//		String imgFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + postImage.getOriginalFilename();
+//
+//		try {
+//			Files.copy(postImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + imgFileName));
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		if (postService.editPost(postTitle, imgFileName ,postContent,postId, userId )) {
+//			return "redirect:/author/home/list";
+//		} else {
+//			model.addAttribute("registerMessage", "Edit failed");
+//			return "editpost.html";
+//		}
+//	}
+	
 	@PostMapping("/update")
 	public String postUpdate(@RequestParam String postTitle,
-			@RequestParam MultipartFile postImage,
 			@RequestParam String postContent,
 			@RequestParam Long postId,
 			Model model) {
 		
 		UserEntity userList = (UserEntity) session.getAttribute("user");
 		Long userId = userList.getUserId();
-		String imgFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + postImage.getOriginalFilename();
-
-		try {
-			Files.copy(postImage.getInputStream(), Path.of("src/main/resources/static/blog-img/" + imgFileName));
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		if (postService.editPost(postTitle, imgFileName ,postContent,postId, userId )) {
+	
+		if (postService.editPost(postTitle,postContent,postId, userId )) {
 			return "redirect:/author/home/list";
 		} else {
 			model.addAttribute("registerMessage", "Edit failed");
@@ -148,6 +170,24 @@ public class PostController {
 		model.addAttribute("author", author);
 		postService.incrementVisitorCount(postId);
 		return "viewpost.html";
+	}
+	
+	//search bar mapping
+	@GetMapping("/search")
+	public String searchPosts(@RequestParam String searchTerm, Model model) {
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		Long userId = user.getUserId();
+		List<PostEntity> searchResults = postService.searchPosts(searchTerm, userId);
+		
+		if (searchResults.isEmpty()) {
+			model.addAttribute("user", user);
+			return "redirect:/author/home/list";
+
+		} else {
+			model.addAttribute("searchResults", searchResults);
+			return "searchresults.html";
+		}
+		
 	}
 }
 

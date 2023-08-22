@@ -44,16 +44,20 @@ body {
     padding-left: 7px;
 }
 
-#register {
-    display: none;
+#wrapper p {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
 }
 
-.slider-wrapper {
-    color: white;
-    background-color: blue;
-    display: inline-block;
-    position: absolute;
-    bottom: 0px;
+#wrapper a {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#register {
+    display: none;
 }
 
 .submit-btn {
