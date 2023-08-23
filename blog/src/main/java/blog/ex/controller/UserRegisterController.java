@@ -22,15 +22,18 @@ public class UserRegisterController {
 	@Autowired
 	private HttpSession session;
 	
-	//ログイン画面の表示
+	//Register画面の表示
 		@GetMapping("/register")
 		public String getLoginRegisterPage() {
 			return "loginregister.html";
 		}
 
-    //ログイン処理
+    // Register処理
+	//PostMappingで/register/processのPOST情報を受取る
+	// @RequestParamでHTMLのFORMAのINPUTを受け取る
 	@PostMapping("/register/process")
 	public String register(@RequestParam String register_user_name, @RequestParam String register_user_email, @RequestParam String register_user_password) {
+		// 受け取って情報をuserService.createAccountに渡して
 		userService.createAccount(register_user_name, register_user_email, register_user_password);
 		return "redirect:/register";
 	}
@@ -40,6 +43,7 @@ public class UserRegisterController {
 	@GetMapping("/logout")
 	public String Logout() {
 		
+		// セッションを切ってログインページに移動する
 		session.invalidate();
 		return "redirect:/login";
 	}

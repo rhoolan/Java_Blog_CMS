@@ -25,6 +25,9 @@ public class PostService {
 	@Autowired 
 	private CommentDao commentDao;
 	
+	@Autowired
+	private HttpSession session;
+	
 	public List<PostEntity> findAllBlogPostByPostAuthorOrderByPostDateDesc(Long postAuthor){
 		if(postAuthor == null) {
 			return null;
@@ -58,12 +61,16 @@ public class PostService {
 //	}
 	
 	public boolean editPost(String postTitle, String postContent, Long postId, Long userId ) {
+		// PostEntityでPostIDでインスタすを作って
 		PostEntity postList = postDao.findByPostId(postId);
+		// 存在してない場合、Falseを戻す
 		if(userId==null) {
 			return false;
 		}else {
+			// 編集した内容をpostのオブジェクトを変更する
 			postList.setPostTitle(postTitle);
 			postList.setPostContent(postContent);
+			// 最後にPostdaoで変更したオブジェクトをデータベースに保存する
 			postDao.save(postList);
 			return true;
 		}
@@ -79,6 +86,11 @@ public class PostService {
 	
 	// delete 
 	public boolean deletePost(Long postId) {
+		// postIDはNULLだったら投稿が存在していないのでfalseを戻す
+		//　投稿が存在してる場合にはまず投稿のコメントを取得してリストに入れる
+		// コメントのforeignKeyはnonnull制約があるので、まずはコメントを全部削除しなかったら投稿を削除できない
+		// コメントリストをiterateして全部を削除する
+		// 最後に投稿を削除する
 		if (postId == null) {
 			return false;
 		} else {
@@ -93,16 +105,21 @@ public class PostService {
 
 	// increment visitor count 
 	public void incrementVisitorCount(Long postId) {
+		// PostIdを使ってPostEntityで投稿のインスタンスを作る
 		PostEntity post = postDao.findByPostId(postId);
+		//　投稿インスタンスから現在のVistiorCountを取得する
 		Long currentVisitorCount = post.getVisitorCount();
+		//　現在のvisitorCountに１を追加
 		Long newVisitorCount = currentVisitorCount + 1;
+		//　投稿のインスタンスのVistiorCOuntをcurrentVisitorCountに設定する
 		post.setVisitorCount(newVisitorCount);
+		// postDaoでインスタンスをデータベースに保存する
 		postDao.save(post);
 	}
 
 	// search bar 
 	public List<PostEntity> searchPosts(String searchTerm, Long userId){
-		return postDao.findByPostTitleContainingOrPostContentContainingAndPostAuthor(searchTerm, searchTerm, userId);
+		return postDao.findByLikePostNameOrContentAndPostAuthor(searchTerm, searchTerm, userId);
 	}
 	
 }

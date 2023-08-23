@@ -18,14 +18,23 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 	
+	// createAccount/Registerの処理
 	public boolean createAccount(String userName, String email, String password) {
+		// UserDaoのfindByEmailを使ってユーザデータベースからユーザの情報を取得してUserEntityでユーザーインスタンスを作る
 		UserEntity userEntity = userDao.findByEmail(email);
 		
+		// userEntityがNullだったらつまりユーザーが存在していない場合、ユーザー登録処理を始める
 		if (userEntity == null) {
+			// UUIDを使ってRandom文字を作る
 			UUID uuid = UUID.randomUUID();
+			// あの文字配列を文字配列化
 			String saltStr = uuid.toString();
+			// あの文字配列を最初の１０文字に絞り込む
 			String salt = saltStr.substring(0,10);
+			// あの文字配列をユーザーを入力したパスワードと組み合わせてHasedPasswordに渡してHashedPasswordを作る
 			String hashedPassword = hashPassword(password+salt);
+			// UserName, email, hashedpassword, saltをUserDaoに渡してデータベースに保存する。
+			// 成功した場合Trueを戻す・成功してない場合FALSEを戻す
 			userDao.save(new UserEntity(userName, email, hashedPassword, salt));
 			return true;
 		} else {
@@ -33,11 +42,17 @@ public class UserService {
 		}
 	}
 	
+	// Loginの処理
 	public UserEntity login(String email, String password) {
+		// UserDaoのfindByEmailを使ってユーザデータベースからユーザの情報を取得してUserEntityでユーザーインスタンスを作る
 		UserEntity userEntity = userDao.findByEmail(email);
+		// ユーザーインスタンスからユーザーのSALTを取得して
 		String salt = userEntity.getSalt();
+		// ユーザーが入力したパスワードとSALTを組み合わせてhashPasswordに渡してハッシュする
 		String hashPassword = hashPassword(password+salt);
 		
+		// あのhashPasswordがデータベースに保存してるhashedPasswordと同じ場合、UserEntityを戻す
+		//　同じではない場合、NUllを戻す
 		if (userEntity.getPassword().equals(hashPassword)) {
 			return userEntity;
 		}else {
@@ -45,6 +60,7 @@ public class UserService {
 		}
 	}
 	
+	// SHA-256を使ってplain-textのパスワードを暗号化する
 	private String hashPassword(String password) {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");

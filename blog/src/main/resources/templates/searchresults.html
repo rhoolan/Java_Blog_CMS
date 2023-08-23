@@ -11,34 +11,38 @@
 <body>
     <header>
         <section id="header-wrapper">
-            <h1 th:text="${userName}+', おかえりなさい'"></h1>
+            <h1 th:text="${user.userName}+', おかえりなさい'"></h1>
 
             <ul>
+				<li>
+					<div class="search-bar">
+						<form th:action="@{/author/home/search}" method="get">
+							<input type="text" name="searchTerm" placeholder="search">
+							<button type="submit">search</button>
+						</form>
+					</div>
+				</li>
                 <li><a th:href="@{/author/home/list}">ホーム</a></li>
                 <li><a th:href="@{/author/home/edituserinfo}">個人情報変更</a></li>
                 <li><a th:href="@{/logout}">ログアウト</a></li>
             </ul>
             
-            <div class="search-bar">
-				<form th:action="@{/author/home/search}" method="get">
-				<input type="text" name="searchTerm" placeholder="search">
-				<button type="submit">search</button>
-			</form>
-		</div>
+
         </section>
     </header>
 
     <main>
-        <section id="posts-wrapper">
+ <section id="posts-wrapper">
             <article class="blog-post" th:each="post:${searchResults}">
                 <img th:src="@{/blog-img/{image}(image=${post.postImage})}">
                 <a th:href="@{/author/home/viewpost/{postId}(postId=${post.postId})}"><h3 th:text="${post.postTitle}"></h3></a>
-                <p th:text="${post.postImage}"></p>
+                <p th:text="${post.postContent}" class="post-content"></p>
+             	<p th:text="'Visitor Count: '+${post.visitorCount}" class="visitor-count"></p>
                 <div class="buttons">
-                    <a th:href="@{/author/home/edit/{postId}(postId=${post.postId})}" class="edit-post"> Edit </a>
-                   <form th:action="@{/author/home/delete}" method="post">
+                    <a th:href="@{/author/home/edit/{postId}(postId=${post.postId})}" class="edit-post">編集</a></li>
+					<form th:action="@{/author/home/delete}" method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
 					   	<input type="hidden" name="postId"  th:value="${post.postId}">
-						<input type="submit" value="Delete" onclick="confirmDelete()">
+						<input type="submit" value="削除" class="delete-btn">
 					</form>
                 </div>
             </article>
