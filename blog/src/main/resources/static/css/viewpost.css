@@ -34,6 +34,25 @@ header h1 {
     list-style: none;
 }
 
+header ul {
+    display: flex;
+    color: whitesmoke;
+}
+
+header ul li {
+    margin-left: 15px;
+    list-style: none;
+}
+
+header ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    filter:brightness(80%);
+}
+
 #header-wrapper a:hover {
     filter:brightness(80%);
 }
@@ -97,13 +116,6 @@ header h1 {
     margin-bottom: 10px;
     border-bottom: 1px dashed grey;
     padding-bottom: 10px;
-}
-.comment-id {
-}
-.comment-date{
-}
-
-.comment-content {
 }
 
 #post-comment {

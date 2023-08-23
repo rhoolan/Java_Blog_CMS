@@ -1422,3 +1422,582 @@ java.lang.NullPointerException: Cannot invoke "blog.ex.model.entity.UserEntity.g
 2023-08-23T12:45:34.888+09:00 DEBUG 9432 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
 2023-08-23T12:45:36.296+09:00 DEBUG 9432 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
 2023-08-23T12:45:53.364+09:00 DEBUG 9432 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T12:46:08.435+09:00 DEBUG 9432 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T12:46:08.441+09:00 DEBUG 9432 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T12:46:08.444+09:00 DEBUG 9432 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T12:46:08.448+09:00 DEBUG 9432 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T12:46:08.450+09:00 DEBUG 9432 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T12:46:11.283+09:00 DEBUG 9432 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T12:46:13.774+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T12:46:13.776+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T12:46:13.779+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T12:46:13.781+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T12:46:13.782+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T12:52:01.903+09:00 DEBUG 9432 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T12:52:34.677+09:00 DEBUG 9432 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select nextval('posts_seq')
+2023-08-23T12:52:34.678+09:00 DEBUG 9432 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : insert into posts (post_author,post_content,post_date,post_image,post_name,visitor_count,post_id) values (?,?,?,?,?,?,?)
+2023-08-23T12:52:34.735+09:00 DEBUG 9432 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T12:52:43.997+09:00 DEBUG 9432 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T12:52:53.125+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T12:52:53.134+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T12:52:53.718+09:00 DEBUG 9432 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : delete from posts where post_id=?
+2023-08-23T12:52:53.852+09:00 DEBUG 9432 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T12:53:10.034+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T12:53:10.037+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : update users set user_email=?,password=?,salt=?,user_name=? where user_id=?
+2023-08-23T12:53:10.826+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T12:53:13.346+09:00 DEBUG 9432 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T13:02:00.155+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:02:00.158+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:02:00.160+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:02:00.169+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:02:00.173+09:00 DEBUG 9432 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:02:07.485+09:00  INFO 9432 --- [RMI TCP Connection(55)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:02:07.514+09:00  INFO 9432 --- [RMI TCP Connection(55)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:02:07.544+09:00  INFO 9432 --- [RMI TCP Connection(55)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:02:07.634+09:00  INFO 9432 --- [RMI TCP Connection(55)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:02:07.642+09:00  INFO 9432 --- [RMI TCP Connection(55)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:02:07.676+09:00  INFO 9432 --- [RMI TCP Connection(55)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:02:21.209+09:00  INFO 15640 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 15640 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:02:21.214+09:00  INFO 15640 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:02:21.787+09:00  INFO 15640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:02:21.853+09:00  INFO 15640 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:02:22.333+09:00  INFO 15640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:02:22.343+09:00  INFO 15640 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:02:22.344+09:00  INFO 15640 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:02:22.713+09:00  INFO 15640 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:02:22.714+09:00  INFO 15640 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1454 ms
+2023-08-23T13:02:22.841+09:00  INFO 15640 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:02:22.893+09:00  INFO 15640 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:02:22.895+09:00  INFO 15640 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:02:23.017+09:00  INFO 15640 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:02:23.131+09:00  INFO 15640 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:02:23.147+09:00  INFO 15640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:02:23.921+09:00  INFO 15640 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@738a815c
+2023-08-23T13:02:23.923+09:00  INFO 15640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:02:24.793+09:00  INFO 15640 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:02:25.396+09:00  INFO 15640 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:02:25.526+09:00 DEBUG 15640 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:02:25.696+09:00 DEBUG 15640 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:02:25.702+09:00  INFO 15640 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:02:26.202+09:00  INFO 15640 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:02:26.246+09:00  WARN 15640 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:02:26.426+09:00  INFO 15640 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:02:26.718+09:00  INFO 15640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:02:26.739+09:00  INFO 15640 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 5.955 seconds (process running for 7.961)
+2023-08-23T13:02:26.814+09:00  INFO 15640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:02:26.815+09:00  INFO 15640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:02:26.820+09:00  INFO 15640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-08-23T13:02:27.196+09:00 DEBUG 15640 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:02:27.216+09:00 DEBUG 15640 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:02:27.229+09:00 DEBUG 15640 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:02:27.237+09:00 DEBUG 15640 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:02:27.282+09:00 DEBUG 15640 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:02:29.910+09:00 DEBUG 15640 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:02:29.912+09:00 DEBUG 15640 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:02:29.920+09:00 DEBUG 15640 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:02:29.927+09:00 DEBUG 15640 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:02:29.929+09:00 DEBUG 15640 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:04:20.760+09:00  INFO 15640 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:04:20.772+09:00  INFO 15640 --- [RMI TCP Connection(12)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:04:20.774+09:00  INFO 15640 --- [RMI TCP Connection(12)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:04:20.780+09:00  INFO 15640 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:04:20.783+09:00  INFO 15640 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:04:20.789+09:00  INFO 15640 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:04:30.393+09:00  INFO 15540 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 15540 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:04:30.396+09:00  INFO 15540 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:04:30.994+09:00  INFO 15540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:04:31.057+09:00  INFO 15540 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:04:31.528+09:00  INFO 15540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:04:31.540+09:00  INFO 15540 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:04:31.541+09:00  INFO 15540 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:04:31.662+09:00  INFO 15540 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:04:31.663+09:00  INFO 15540 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1211 ms
+2023-08-23T13:04:31.808+09:00  INFO 15540 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:04:31.882+09:00  INFO 15540 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:04:31.888+09:00  INFO 15540 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:04:32.044+09:00  INFO 15540 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:04:32.165+09:00  INFO 15540 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:04:32.180+09:00  INFO 15540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:04:32.362+09:00  INFO 15540 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2565a7d0
+2023-08-23T13:04:32.364+09:00  INFO 15540 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:04:32.686+09:00  INFO 15540 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:04:33.772+09:00  INFO 15540 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:04:33.846+09:00 DEBUG 15540 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:04:33.849+09:00 DEBUG 15540 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:04:33.855+09:00  INFO 15540 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:04:34.367+09:00  INFO 15540 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:04:34.442+09:00  WARN 15540 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:04:34.587+09:00  INFO 15540 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:04:34.843+09:00  INFO 15540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:04:34.856+09:00  INFO 15540 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 4.895 seconds (process running for 5.61)
+2023-08-23T13:04:34.926+09:00  INFO 15540 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:04:34.926+09:00  INFO 15540 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:04:34.928+09:00  INFO 15540 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-23T13:04:35.093+09:00 DEBUG 15540 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:04:35.108+09:00 DEBUG 15540 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:04:35.112+09:00 DEBUG 15540 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:04:35.116+09:00 DEBUG 15540 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:04:35.151+09:00 DEBUG 15540 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:04:52.287+09:00 DEBUG 15540 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:04:52.291+09:00 DEBUG 15540 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:04:52.297+09:00 DEBUG 15540 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:04:52.303+09:00 DEBUG 15540 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:04:52.306+09:00 DEBUG 15540 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:06:29.693+09:00 DEBUG 15540 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:06:29.700+09:00 DEBUG 15540 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:06:29.706+09:00 DEBUG 15540 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:06:29.708+09:00 DEBUG 15540 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:06:29.711+09:00 DEBUG 15540 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:07:09.384+09:00  INFO 15540 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:07:09.402+09:00  INFO 15540 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:07:09.404+09:00  INFO 15540 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:07:09.411+09:00  INFO 15540 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:07:09.413+09:00  INFO 15540 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:07:09.418+09:00  INFO 15540 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:07:25.844+09:00  INFO 8032 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 8032 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:07:25.847+09:00  INFO 8032 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:07:26.584+09:00  INFO 8032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:07:26.669+09:00  INFO 8032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:07:27.226+09:00  INFO 8032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:07:27.236+09:00  INFO 8032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:07:27.237+09:00  INFO 8032 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:07:27.380+09:00  INFO 8032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:07:27.380+09:00  INFO 8032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1457 ms
+2023-08-23T13:07:27.538+09:00  INFO 8032 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:07:27.592+09:00  INFO 8032 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:07:27.595+09:00  INFO 8032 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:07:27.743+09:00  INFO 8032 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:07:28.150+09:00  INFO 8032 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:07:28.168+09:00  INFO 8032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:07:28.344+09:00  INFO 8032 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2565a7d0
+2023-08-23T13:07:28.346+09:00  INFO 8032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:07:28.629+09:00  INFO 8032 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:07:29.429+09:00  INFO 8032 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:07:29.479+09:00 DEBUG 8032 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:07:29.595+09:00 DEBUG 8032 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:07:29.603+09:00  INFO 8032 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:07:29.983+09:00  INFO 8032 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:07:30.033+09:00  WARN 8032 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:07:30.175+09:00  INFO 8032 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:07:30.400+09:00  INFO 8032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:07:30.409+09:00  INFO 8032 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 5.062 seconds (process running for 5.897)
+2023-08-23T13:07:35.612+09:00  INFO 8032 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:07:35.614+09:00  INFO 8032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:07:35.620+09:00  INFO 8032 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-08-23T13:07:35.858+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:07:35.888+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T13:07:35.892+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T13:07:35.902+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T13:07:35.947+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T13:07:43.120+09:00 ERROR 8032 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "blog.ex.model.entity.UserEntity.getUserId()" because "userList" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "blog.ex.model.entity.UserEntity.getUserId()" because "userList" is null
+	at blog.ex.controller.PostListController.getIndexPostList(PostListController.java:28) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.11.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.11.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.11.jar:10.1.11]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-08-23T13:08:33.459+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T13:08:33.463+09:00 DEBUG 8032 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T13:08:33.483+09:00 DEBUG 8032 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T13:17:45.771+09:00  INFO 8032 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:17:45.784+09:00  INFO 8032 --- [RMI TCP Connection(18)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:17:45.804+09:00  INFO 8032 --- [RMI TCP Connection(18)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:17:45.847+09:00  INFO 8032 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:17:45.851+09:00  INFO 8032 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:17:45.865+09:00  INFO 8032 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:45:30.844+09:00  INFO 10760 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 10760 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:45:30.880+09:00  INFO 10760 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:45:39.726+09:00  INFO 10760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:45:39.954+09:00  INFO 10760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 213 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:45:52.412+09:00  INFO 10760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:45:52.455+09:00  INFO 10760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:45:52.455+09:00  INFO 10760 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:45:53.052+09:00  INFO 10760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:45:53.053+09:00  INFO 10760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 21846 ms
+2023-08-23T13:45:53.989+09:00  INFO 10760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:45:54.386+09:00  INFO 10760 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:45:54.388+09:00  INFO 10760 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:45:54.796+09:00  INFO 10760 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:45:55.488+09:00  INFO 10760 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:45:55.545+09:00  INFO 10760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:45:56.162+09:00  INFO 10760 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c72189f
+2023-08-23T13:45:56.163+09:00  INFO 10760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:45:56.979+09:00  INFO 10760 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:45:58.058+09:00  INFO 10760 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:45:58.253+09:00 DEBUG 10760 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:45:58.363+09:00 DEBUG 10760 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:45:58.367+09:00  INFO 10760 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:46:00.342+09:00  INFO 10760 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:46:00.549+09:00  WARN 10760 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:46:00.936+09:00  INFO 10760 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:46:02.473+09:00  INFO 10760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:46:02.497+09:00  INFO 10760 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 35.072 seconds (process running for 52.255)
+2023-08-23T13:46:04.862+09:00  INFO 10760 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:46:04.862+09:00  INFO 10760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:46:04.863+09:00  INFO 10760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-23T13:46:17.303+09:00 DEBUG 10760 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T13:46:17.326+09:00 DEBUG 10760 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select nextval('users_seq')
+2023-08-23T13:46:17.374+09:00 DEBUG 10760 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into users (user_email,password,salt,user_name,user_id) values (?,?,?,?,?)
+2023-08-23T13:46:58.575+09:00  INFO 10760 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:46:58.587+09:00  INFO 10760 --- [RMI TCP Connection(12)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:46:58.588+09:00  INFO 10760 --- [RMI TCP Connection(12)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:46:58.629+09:00  INFO 10760 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:46:58.631+09:00  INFO 10760 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:46:58.635+09:00  INFO 10760 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:47:06.018+09:00  INFO 13248 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 13248 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:47:06.021+09:00  INFO 13248 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:47:06.551+09:00  INFO 13248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:47:06.600+09:00  INFO 13248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:47:07.002+09:00  INFO 13248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:47:07.011+09:00  INFO 13248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:47:07.012+09:00  INFO 13248 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:47:07.127+09:00  INFO 13248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:47:07.127+09:00  INFO 13248 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1059 ms
+2023-08-23T13:47:07.273+09:00  INFO 13248 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:47:07.331+09:00  INFO 13248 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:47:07.333+09:00  INFO 13248 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:47:07.460+09:00  INFO 13248 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:47:07.579+09:00  INFO 13248 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:47:07.596+09:00  INFO 13248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:47:07.742+09:00  INFO 13248 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fd7b79
+2023-08-23T13:47:07.744+09:00  INFO 13248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:47:07.971+09:00  INFO 13248 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:47:08.546+09:00  INFO 13248 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:47:08.592+09:00 DEBUG 13248 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:47:08.605+09:00 DEBUG 13248 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:47:08.609+09:00  INFO 13248 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:47:08.928+09:00  INFO 13248 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:47:08.965+09:00  WARN 13248 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:47:09.077+09:00  INFO 13248 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:47:09.255+09:00  INFO 13248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:47:09.263+09:00  INFO 13248 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 3.616 seconds (process running for 4.194)
+2023-08-23T13:47:16.095+09:00  INFO 13248 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:47:16.095+09:00  INFO 13248 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:47:16.096+09:00  INFO 13248 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-23T13:47:16.228+09:00 DEBUG 13248 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T13:47:16.246+09:00 DEBUG 13248 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select nextval('users_seq')
+2023-08-23T13:47:16.267+09:00 DEBUG 13248 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into users (user_email,password,salt,user_name,user_id) values (?,?,?,?,?)
+2023-08-23T13:49:25.881+09:00  INFO 13248 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:49:25.892+09:00  INFO 13248 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:49:25.893+09:00  INFO 13248 --- [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:49:25.899+09:00  INFO 13248 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:49:25.901+09:00  INFO 13248 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:49:25.905+09:00  INFO 13248 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:49:33.170+09:00  INFO 14916 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 14916 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:49:33.178+09:00  INFO 14916 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:49:33.783+09:00  INFO 14916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:49:33.839+09:00  INFO 14916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:49:34.309+09:00  INFO 14916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:49:34.320+09:00  INFO 14916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:49:34.321+09:00  INFO 14916 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:49:34.443+09:00  INFO 14916 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:49:34.444+09:00  INFO 14916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1187 ms
+2023-08-23T13:49:34.608+09:00  INFO 14916 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:49:34.659+09:00  INFO 14916 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:49:34.661+09:00  INFO 14916 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:49:34.793+09:00  INFO 14916 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:49:34.912+09:00  INFO 14916 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:49:34.935+09:00  INFO 14916 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:49:35.090+09:00  INFO 14916 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4438b862
+2023-08-23T13:49:35.092+09:00  INFO 14916 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:49:35.314+09:00  INFO 14916 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:49:35.964+09:00  INFO 14916 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:49:36.008+09:00 DEBUG 14916 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:49:36.010+09:00 DEBUG 14916 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:49:36.013+09:00  INFO 14916 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:49:36.357+09:00  INFO 14916 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:49:36.447+09:00  WARN 14916 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:49:36.648+09:00  INFO 14916 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:49:36.869+09:00  INFO 14916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:49:36.876+09:00  INFO 14916 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 4.31 seconds (process running for 5.043)
+2023-08-23T13:49:37.480+09:00  INFO 14916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:49:37.480+09:00  INFO 14916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:49:37.481+09:00  INFO 14916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-23T13:49:43.743+09:00 DEBUG 14916 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T13:49:43.767+09:00 DEBUG 14916 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select nextval('users_seq')
+2023-08-23T13:49:43.806+09:00 DEBUG 14916 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : insert into users (user_email,password,salt,user_name,user_id) values (?,?,?,?,?)
+2023-08-23T13:50:09.908+09:00  INFO 14916 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:50:09.920+09:00  INFO 14916 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:50:09.921+09:00  INFO 14916 --- [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:50:09.927+09:00  INFO 14916 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:50:09.928+09:00  INFO 14916 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:50:09.931+09:00  INFO 14916 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:50:18.155+09:00  INFO 16072 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 16072 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:50:18.158+09:00  INFO 16072 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:50:18.675+09:00  INFO 16072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:50:18.731+09:00  INFO 16072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:50:19.125+09:00  INFO 16072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:50:19.134+09:00  INFO 16072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:50:19.134+09:00  INFO 16072 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:50:19.237+09:00  INFO 16072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:50:19.238+09:00  INFO 16072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1034 ms
+2023-08-23T13:50:19.357+09:00  INFO 16072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:50:19.400+09:00  INFO 16072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:50:19.403+09:00  INFO 16072 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:50:19.519+09:00  INFO 16072 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:50:19.633+09:00  INFO 16072 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:50:19.646+09:00  INFO 16072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:50:19.901+09:00  INFO 16072 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@9d99851
+2023-08-23T13:50:19.902+09:00  INFO 16072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:50:20.123+09:00  INFO 16072 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:50:20.713+09:00  INFO 16072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:50:20.750+09:00 DEBUG 16072 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:50:20.755+09:00 DEBUG 16072 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:50:20.757+09:00  INFO 16072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:50:21.086+09:00  INFO 16072 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:50:21.124+09:00  WARN 16072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:50:21.237+09:00  INFO 16072 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:50:21.415+09:00  INFO 16072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:50:21.423+09:00  INFO 16072 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 3.712 seconds (process running for 4.452)
+2023-08-23T13:50:23.259+09:00  INFO 16072 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:50:23.260+09:00  INFO 16072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:50:23.262+09:00  INFO 16072 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-23T13:50:35.959+09:00 DEBUG 16072 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T13:52:03.297+09:00  INFO 16072 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T13:52:03.312+09:00  INFO 16072 --- [RMI TCP Connection(12)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T13:52:03.314+09:00  INFO 16072 --- [RMI TCP Connection(12)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T13:52:03.324+09:00  INFO 16072 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:52:03.326+09:00  INFO 16072 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T13:52:03.335+09:00  INFO 16072 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T13:59:47.358+09:00  INFO 12784 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 12784 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T13:59:47.361+09:00  INFO 12784 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T13:59:48.010+09:00  INFO 12784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T13:59:48.085+09:00  INFO 12784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2023-08-23T13:59:48.619+09:00  INFO 12784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T13:59:48.632+09:00  INFO 12784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T13:59:48.632+09:00  INFO 12784 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T13:59:48.924+09:00  INFO 12784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T13:59:48.925+09:00  INFO 12784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1517 ms
+2023-08-23T13:59:49.089+09:00  INFO 12784 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T13:59:49.147+09:00  INFO 12784 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T13:59:49.152+09:00  INFO 12784 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T13:59:49.293+09:00  INFO 12784 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:59:49.435+09:00  INFO 12784 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T13:59:49.451+09:00  INFO 12784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T13:59:49.640+09:00  INFO 12784 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@738a815c
+2023-08-23T13:59:49.641+09:00  INFO 12784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T13:59:49.924+09:00  INFO 12784 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T13:59:50.625+09:00  INFO 12784 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T13:59:50.714+09:00 DEBUG 12784 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T13:59:50.716+09:00 DEBUG 12784 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T13:59:50.719+09:00  INFO 12784 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T13:59:51.157+09:00  INFO 12784 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T13:59:51.203+09:00  WARN 12784 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T13:59:51.345+09:00  INFO 12784 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T13:59:51.586+09:00  INFO 12784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T13:59:51.602+09:00  INFO 12784 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 4.708 seconds (process running for 5.439)
+2023-08-23T13:59:59.586+09:00  INFO 12784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T13:59:59.587+09:00  INFO 12784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T13:59:59.589+09:00  INFO 12784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-08-23T14:00:20.751+09:00 DEBUG 12784 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:00:20.808+09:00 DEBUG 12784 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select nextval('users_seq')
+2023-08-23T14:00:20.872+09:00 DEBUG 12784 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into users (user_email,password,salt,user_name,user_id) values (?,?,?,?,?)
+2023-08-23T14:22:45.949+09:00  INFO 12784 --- [RMI TCP Connection(31)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-08-23T14:22:45.981+09:00  INFO 12784 --- [RMI TCP Connection(31)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-08-23T14:22:46.013+09:00  INFO 12784 --- [RMI TCP Connection(31)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-08-23T14:22:46.244+09:00  INFO 12784 --- [RMI TCP Connection(31)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T14:22:46.246+09:00  INFO 12784 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-23T14:22:46.263+09:00  INFO 12784 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-08-23T14:23:04.286+09:00  INFO 19180 --- [main] blog.ex.BlogApplication                  : Starting BlogApplication using Java 17.0.7 with PID 19180 (C:\Users\rhool\Desktop\Java_blog_CMS\blog\target\classes started by rhool in C:\Users\rhool\Desktop\Java_blog_CMS\blog)
+2023-08-23T14:23:04.291+09:00  INFO 19180 --- [main] blog.ex.BlogApplication                  : No active profile set, falling back to 1 default profile: "default"
+2023-08-23T14:23:05.672+09:00  INFO 19180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-23T14:23:05.820+09:00  INFO 19180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 3 JPA repository interfaces.
+2023-08-23T14:23:06.934+09:00  INFO 19180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-23T14:23:06.949+09:00  INFO 19180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-23T14:23:06.950+09:00  INFO 19180 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-08-23T14:23:07.292+09:00  INFO 19180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-23T14:23:07.293+09:00  INFO 19180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2876 ms
+2023-08-23T14:23:07.591+09:00  INFO 19180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-23T14:23:07.717+09:00  INFO 19180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-08-23T14:23:07.720+09:00  INFO 19180 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-23T14:23:08.075+09:00  INFO 19180 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T14:23:08.374+09:00  INFO 19180 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-08-23T14:23:08.402+09:00  INFO 19180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-23T14:23:08.945+09:00  INFO 19180 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f2c722
+2023-08-23T14:23:08.955+09:00  INFO 19180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-23T14:23:09.779+09:00  INFO 19180 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-23T14:23:11.479+09:00  INFO 19180 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-23T14:23:11.572+09:00 DEBUG 19180 --- [main] org.hibernate.SQL                        : alter table if exists comments alter column comment_date set data type timestamp(6)
+2023-08-23T14:23:11.577+09:00 DEBUG 19180 --- [main] org.hibernate.SQL                        : alter table if exists posts alter column post_date set data type timestamp(6)
+2023-08-23T14:23:11.591+09:00  INFO 19180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-23T14:23:12.534+09:00  INFO 19180 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-08-23T14:23:12.636+09:00  WARN 19180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-23T14:23:13.191+09:00  INFO 19180 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-08-23T14:23:13.946+09:00  INFO 19180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-23T14:23:14.003+09:00  INFO 19180 --- [main] blog.ex.BlogApplication                  : Started BlogApplication in 10.633 seconds (process running for 12.28)
+2023-08-23T14:23:14.751+09:00  INFO 19180 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23T14:23:14.756+09:00  INFO 19180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-23T14:23:14.762+09:00  INFO 19180 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-08-23T14:24:33.573+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:24:33.677+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select nextval('users_seq')
+2023-08-23T14:24:33.774+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into users (user_email,password,salt,user_name,user_id) values (?,?,?,?,?)
+2023-08-23T14:24:55.840+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:24:55.872+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:24:56.012+09:00  WARN 19180 --- [http-nio-8080-exec-6] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [113] milliseconds.
+2023-08-23T14:24:56.079+09:00 DEBUG 19180 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:26:12.061+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select nextval('posts_seq')
+2023-08-23T14:26:12.352+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into posts (post_author,post_content,post_date,post_image,post_name,visitor_count,post_id) values (?,?,?,?,?,?,?)
+2023-08-23T14:26:12.425+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:26:28.782+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:26:52.472+09:00 DEBUG 19180 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : insert into posts (post_author,post_content,post_date,post_image,post_name,visitor_count,post_id) values (?,?,?,?,?,?,?)
+2023-08-23T14:26:52.501+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:27:13.930+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : insert into posts (post_author,post_content,post_date,post_image,post_name,visitor_count,post_id) values (?,?,?,?,?,?,?)
+2023-08-23T14:27:13.961+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:27:21.176+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:27:49.185+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:27:49.196+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:27:49.201+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:27:49.224+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:27:49.251+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:28:12.469+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select nextval('comments_seq')
+2023-08-23T14:28:12.474+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : insert into comments (comment_content,comment_date,post_id,comment_id) values (?,?,?,?)
+2023-08-23T14:28:12.514+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:12.520+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:28:12.531+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:28:12.539+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:12.550+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:28:45.430+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : insert into comments (comment_content,comment_date,post_id,comment_id) values (?,?,?,?)
+2023-08-23T14:28:45.463+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:45.471+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:28:45.473+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:28:45.483+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:45.488+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:28:50.583+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:50.595+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:28:50.602+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:28:50.609+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:50.615+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:28:53.286+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:53.297+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:28:53.303+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:28:53.314+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:28:53.321+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:28:59.026+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:29:06.179+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:29:22.104+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:29:22.112+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:29:22.144+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:29:25.461+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:29:25.469+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:29:25.480+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:29:25.488+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:29:25.493+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:29:33.665+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:30:01.101+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:30:01.116+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:30:01.139+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : delete from posts where post_id=?
+2023-08-23T14:30:01.494+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:30:06.792+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:30:14.561+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:30:14.569+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:30:14.573+09:00 DEBUG 19180 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : delete from posts where post_id=?
+2023-08-23T14:30:14.610+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:30:53.154+09:00 DEBUG 19180 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:30:53.165+09:00 DEBUG 19180 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : update users set user_email=?,password=?,salt=?,user_name=? where user_id=?
+2023-08-23T14:30:53.175+09:00 DEBUG 19180 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:30:58.766+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:31:14.568+09:00 DEBUG 19180 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : SELECT * FROM posts WHERE (post_name ILIKE '%' || ? || '%' OR post_content ILIKE '%' || ? || '%') AND post_author=?
+2023-08-23T14:31:14.568+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : SELECT * FROM posts WHERE (post_name ILIKE '%' || ? || '%' OR post_content ILIKE '%' || ? || '%') AND post_author=?
+2023-08-23T14:31:15.893+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : SELECT * FROM posts WHERE (post_name ILIKE '%' || ? || '%' OR post_content ILIKE '%' || ? || '%') AND post_author=?
+2023-08-23T14:31:27.714+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : SELECT * FROM posts WHERE (post_name ILIKE '%' || ? || '%' OR post_content ILIKE '%' || ? || '%') AND post_author=?
+2023-08-23T14:31:31.820+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:31:40.549+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : SELECT * FROM posts WHERE (post_name ILIKE '%' || ? || '%' OR post_content ILIKE '%' || ? || '%') AND post_author=?
+2023-08-23T14:31:50.016+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:38:03.219+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:38:03.223+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:38:03.275+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:38:15.888+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:38:15.890+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T14:38:15.907+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:38:18.953+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:38:18.956+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:38:18.960+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:38:18.965+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:38:18.967+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:38:32.906+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:38:32.910+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T14:38:32.913+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T14:38:32.918+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T14:38:32.923+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T14:38:48.041+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:45:02.503+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T14:45:59.131+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T15:38:26.142+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T15:38:26.428+09:00 DEBUG 19180 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T15:38:27.048+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T15:38:32.573+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:38:32.576+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T15:38:32.986+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T15:38:33.112+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:38:33.351+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T15:38:51.947+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T15:38:55.981+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:38:55.983+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T15:38:55.984+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T15:38:55.986+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:38:55.987+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T15:39:17.324+09:00 DEBUG 19180 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T15:39:20.443+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:39:20.447+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T15:39:20.449+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T15:39:20.453+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:39:21.711+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T15:39:29.323+09:00 DEBUG 19180 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T15:39:31.372+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:39:31.374+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_id=?
+2023-08-23T15:39:31.377+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.comment_id,c1_0.comment_content,c1_0.comment_date,c1_0.post_id from comments c1_0 where c1_0.post_id=? order by c1_0.comment_date desc
+2023-08-23T15:39:31.382+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_id=?
+2023-08-23T15:39:31.384+09:00 DEBUG 19180 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : update posts set post_author=?,post_content=?,post_date=?,post_image=?,post_name=?,visitor_count=? where post_id=?
+2023-08-23T15:46:27.265+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T15:52:40.884+09:00 DEBUG 19180 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc
+2023-08-23T15:56:38.695+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T15:56:38.701+09:00 DEBUG 19180 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.user_id,u1_0.user_email,u1_0.password,u1_0.salt,u1_0.user_name from users u1_0 where u1_0.user_email=?
+2023-08-23T15:56:38.776+09:00 DEBUG 19180 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select p1_0.post_id,p1_0.post_author,p1_0.post_content,p1_0.post_date,p1_0.post_image,p1_0.post_name,p1_0.visitor_count from posts p1_0 where p1_0.post_author=? order by p1_0.post_date desc

@@ -23,7 +23,7 @@ public class UserService {
 		// UserDaoのfindByEmailを使ってユーザデータベースからユーザの情報を取得してUserEntityでユーザーインスタンスを作る
 		UserEntity userEntity = userDao.findByEmail(email);
 		
-		// userEntityがNullだったらつまりユーザーが存在していない場合、ユーザー登録処理を始める
+		// userEntityがNullだったら,つまりユーザーが存在していない場合、ユーザー登録処理を始める
 		if (userEntity == null) {
 			// UUIDを使ってRandom文字を作る
 			UUID uuid = UUID.randomUUID();

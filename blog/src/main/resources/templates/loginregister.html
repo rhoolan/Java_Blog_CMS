@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/loginregister.css}">
-    <title>ログイン・登録</title>
-</head>
-<body>
-    <main>
-        <section id="wrapper">
-            <section id="login">
-                <form method="post" th:action="@{/login/process}">
-                    <h2>Login</h2>
-                    <input type="text" name="login_email" placeholder="email" required>
-                    <input type="password" name="login_user_password" placeholder="password" required>
-                    <input type="submit" class="submit-btn" value="Login">
-                </form>
-                    <p>Not a member?</p>
-                    <a href="#" class="slider-button" id="register_slide_up" onclick="registerSlideUp()"> Register </a>
-            </section>
 
-             <section id="register">
-                <form method="post" th:action="@{/register/process}">
-                    <h2>Register</h2>
-                    <input type="text" name="register_user_name" placeholder="username" required>
-                    <input type="text" name="register_user_email" placeholder="email" required>
-                    <input type="password" name="register_user_password" placeholder="password" required>
-                    <input type="password" placeholder="confirm password" required>
-                    <input type="submit" class="submit-btn" value="Register">
-                </form>
-					<p>Already a member?</p>
-                    <a href="#" class="slider-button" id="login_slide_up" onclick="loginSlideUp()"> Login </a>  
-        </section>
-    </main>
-    <script src="/js/loginregister.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/css/loginregister.css}">
+	<title>ログイン・登録</title>
+</head>
+
+<body>
+	<main>
+		<section id="wrapper">
+			<section id="login">
+				<form method="post" th:action="@{/login/process}">
+					<h2>Login</h2>
+					<input type="text" name="login_email" placeholder="email" required>
+					<input type="password" name="login_user_password" placeholder="password" required>
+					<input type="submit" class="submit-btn" value="Login">
+				</form>
+				<p>Not a member?</p>
+				<a href="#" class="slider-button" id="register_slide_up" onclick="registerSlideUp()"> Register </a>
+			</section>
+
+			<section id="register">
+				<form method="post" th:action="@{/register/process}" onSubmit="return checkPassword(this)">
+					<h2>Register</h2>
+					<input type="text" name="register_user_name" placeholder="username" required>
+					<input type="text" name="register_user_email" placeholder="email" required>
+					<input type="password" name="register_user_password" placeholder="password" required>
+					<input type="password" name="confirm_password" placeholder="confirm password" required>
+					<input type="submit" class="submit-btn" value="Register">
+				</form>
+				<p>Already a member?</p>
+				<a href="#" class="slider-button" id="login_slide_up" onclick="loginSlideUp()"> Login </a>
+			</section>
+	</main>
+	<script>
+		function registerSlideUp() {
+			document.getElementById('register').style = 'display: block';
+			document.getElementById('login').style = 'display: none'
+		}
+
+		function loginSlideUp() {
+			document.getElementById('login').style = "display: block";
+			document.getElementById('register').style = "display: none";
+		}
+
+
+		// Function to check Whether both passwords
+		// is same or not.
+		function checkPassword(form) {
+			const password1 = form.register_user_password.value;
+			const password2 = form.confirm_password.value;
+
+			// If password not entered
+			if (password1 == '')
+				alert("Please enter Password");
+
+			// If confirm password not entered
+			else if (password2 == '')
+				alert("Please enter confirm password");
+
+			// If Not same return False.    
+			else if (password1 != password2) {
+				alert("\nPassword did not match: Please try again...")
+				return false;
+			}
+
+			// If same return True.
+			else {
+				alert("Password Match: Your account has been created!")
+				return true;
+			}
+		}
+	</script>
 </body>
+
 </html>
