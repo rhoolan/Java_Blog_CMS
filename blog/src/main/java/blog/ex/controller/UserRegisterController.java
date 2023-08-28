@@ -34,8 +34,11 @@ public class UserRegisterController {
 	@PostMapping("/register/process")
 	public String register(@RequestParam String register_user_name, @RequestParam String register_user_email, @RequestParam String register_user_password) {
 		// 受け取って情報をuserService.createAccountに渡して
+		if (register_user_name == "" || register_user_email == "" || register_user_password == "") {
+			return "redirect:/register";
+		}
 		userService.createAccount(register_user_name, register_user_email, register_user_password);
-		return "redirect:/register";
+		return "redirect:/login";
 	}
 	
 
